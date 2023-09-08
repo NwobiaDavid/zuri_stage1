@@ -16,7 +16,7 @@ app.get("/api", (req,res)=>{
         res.json({error: 'some parameters are missing...'})
     }
 
-    const current_day = new Date().toLocaleString('en-UK',{weekday: 'long'});
+    const current_day = new Date().toLocaleString('en-NG',{weekday: 'long'});
     const utc_time = getCurrentUTCTime();
     const github_file_url = 'https://github.com/NwobiaDavid/zuri_stage1/blob/main/index.js';
     const github_repo_url= 'https://github.com/NwobiaDavid/zuri_stage1';
