@@ -16,8 +16,22 @@ app.get("/api", (req,res)=>{
         res.json({error: 'some parameters are missing...'})
     }
 
-    const current_day = new Date().toLocaleString({weekday: 'long'});
-    const utcTime = getCurrentUTCTime();
+    const current_day = new Date().toLocaleString('en-UK',{weekday: 'long'});
+    const utc_time = getCurrentUTCTime();
+    const github_file_url = 'https://github.com/NwobiaDavid/zuri_stage1/blob/main/index.js';
+    const github_repo_url= 'https://github.com/NwobiaDavid/zuri_stage1';
+
+    const json_obj = {
+        slack_name,
+        current_day,
+        utc_time,
+        track,
+        github_file_url,
+        github_repo_url,
+        status_code: 200
+    }
+
+    res.json(json_obj);
 })
 
 app.listen(port,()=>{
